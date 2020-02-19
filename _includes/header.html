@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-md navbar-light bg-faded" role="navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-faded shadow-sm" role="navigation">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand page-scroll" href="#home">{{ site.title }}</a>
+  <a class="navbar-brand page-scroll" href="/">{{ site.title }}</a>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       {% for section in site.sections %}
         <li class="nav-item">
-          <a class="nav-link page-scroll" href="#{{ section.link }}">{{ section.name }}</a>
+          <a class="nav-link page-scroll" href="/#{{ section.link }}">{{ section.name }}</a>
         </li>            
       {% endfor %}  
     </ul>
