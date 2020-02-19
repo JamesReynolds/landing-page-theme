@@ -5,8 +5,8 @@
       <div class="col-md-8">
         <ul class="list-inline">
           {% for section in site.sections %}
-            <li class="footer-menu-divider">&sdot;</li>
-            <li>
+            <li class="list-inline-item">
+              <span class="footer-menu-divider">&sdot;</span>
               <a href="#{{section.link}}">{{section.name}}</a>
             </li>
           {% endfor %}
