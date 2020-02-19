@@ -3,11 +3,13 @@
 	{% include head.html %}
 
 	<body>
+		<div id="home">
 		{% include header.html %}
 		{% for section in site.sections %}
 		  {% include section.html section=section %}
 		{% endfor %}
 		{% include footer.html %}
 		{% include js.html %}
+		</div>
 	</body>
 </html>

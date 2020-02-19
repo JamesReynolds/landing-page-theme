@@ -4,15 +4,7 @@
     {% include {{ section.sectionlayout | append: '.html' }} %}
   {% else %}
     <div class="container content-section text-center">      
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <br/><br/>
-          <h2>{{section.name}}</h2>
-          <br/>
-          {{section.content}}
-          <br/>
-        </div>
-      </div>
+      {% include standard_section.html %}	
     </div>
   {% endif %}  
 </section>
