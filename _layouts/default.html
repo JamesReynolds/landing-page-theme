@@ -4,9 +4,9 @@
 
 	<body>
 		{% include header.html %}
-		{% include about.html %}
-		{% include page_content.html %}
-		{% include contact.html %}
+		{% for section in site.sections %}
+		  {% include section.html section=section %}
+		{% endfor %}
 		{% include footer.html %}
 		{% include js.html %}
 	</body>
