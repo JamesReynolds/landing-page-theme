@@ -1,16 +1,24 @@
-<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light shadow-sm" role="navigation" style="opacity: 80%">
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm" role="navigation" style="opacity: 80%">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand page-scroll" href="/">{{ site.title }}</a>
+  <a class="navbar-brand" href="/">{{ site.title }}</a>
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    {% if page.layout == "default" %}
+    <ul class="navbar-nav ml-auto smooth-scroll">
+    {% else %}
     <ul class="navbar-nav ml-auto">
+    {% endif %}
       {% for section in site.sections %}
         <li class="nav-item">
+          {% if page.layout == "default" %}
+          <a class="nav-link page-scroll" href="#{{ section.link }}">{{ section.name }}</a>
+          {% else %}
           <a class="nav-link page-scroll" href="/#{{ section.link }}">{{ section.name }}</a>
-        </li>            
-      {% endfor %}  
+          {% endif %}
+        </li>
+      {% endfor %}
     </ul>
   </div>
   <!-- /.navbar-collapse -->

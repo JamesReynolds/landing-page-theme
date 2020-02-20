@@ -1,10 +1,20 @@
 <section id="{{section.link}}">
-  {% if section.sectionlayout %}
-    {% assign cards = site[section.cards] %}
-    {% include {{ section.sectionlayout | append: '.html' }} %}
+
+  {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+  {% if forloop.first %}
+  <div style="padding-top: 55px">
+  {% elsif thecycle == 'odd' %}
+  <div class="content-section-a">
   {% else %}
-    <div class="container content-section text-center">      
-      {% include standard_section.html %}	
+  <div class="content-section-b">
+  {% endif %}
+    {% if section.sectionlayout %}
+      {% assign cards = site[section.cards] %}
+      {% include {{ section.sectionlayout | append: '.html' }} %}
+    {% else %}
+    <div class="container content-section text-center">
+      {% include standard_section.html %}
     </div>
-  {% endif %}  
+    {% endif %}
+  </div>
 </section>
