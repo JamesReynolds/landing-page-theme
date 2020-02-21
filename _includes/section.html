@@ -2,7 +2,7 @@
 
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
   {% if forloop.first %}
-  <div style="padding-top: 55px">
+  <div>
   {% elsif thecycle == 'odd' %}
   <div class="content-section-a">
   {% else %}

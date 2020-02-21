@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-  <body style="padding-top: 55px">
+  <body>
     {% include header.html %}
-    <div style="position:relative;">
-      <div style="background: no-repeat url(/assets/{{page.titleimage}}); postition: relative;">
-        <img src="/assets/{{page.titleimage}}" style="vertical-align: top; height: 100%; opacity: 0;">
-        <div style="position: absolute; top: 0; width: 100%; height: 100%;">
+    <div class="page-background">
+      <div class="page-background" style="background: no-repeat url(/assets/{{page.titleimage}});">
+        <img src="/assets/{{page.titleimage}}">
+	<div class="page-background-content">
           <div class="container">
             <div class="row">
               <div class="col-md-10 offset-md-1">
-                <h1 style="color: white; mix-blend-mode: difference;">{{ page.title }}</h1>
-                <h2 style="color: white; mix-blend-mode: difference;">{{ page.subTitle }}</h2>
+                <h1>{{ page.title }}</h1>
+                <h2>{{ page.subTitle }}</h2>
               </div>
             </div>
           </div>
