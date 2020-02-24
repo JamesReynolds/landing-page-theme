@@ -8,16 +8,22 @@
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
+    {% if site.criticalcss %}
+      <style>
+      {% if page.url == '/' %}
+        {% include index.html.criticalcss %}
+      {% else %}
+        {% include {{page.url | append: '.criticalcss'}} %}
+      {% endif %}
+      </style>
+    {% else %}
     <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/css/landing-page.css" rel="stylesheet">
-    <link href="assets/css/projects.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/assets/css/landing-page.css" rel="stylesheet">
+    <link href="/assets/css/projects.css" rel="stylesheet">
+    {% endif %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
